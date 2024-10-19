@@ -8,8 +8,8 @@ function Header() {
     <header className="w-full  font-Montserrat font-semibold">
       <nav className="flex flex-col">
         {/* Upper Part */}
-        <section className="border-b px-4 py-1">
-          <ul className="flex flex-row justify-between items-center max-w-[1280px] mx-auto">
+        <section className="border-b">
+          <ul className="flex flex-row justify-between items-center max-w-[1280px] mx-auto px-4 py-1">
             <li className="text-xl text-primary">Code Resource</li>
             {/* Social Icons */}
             <section className="flex flex-row gap-4">
@@ -35,8 +35,8 @@ function Header() {
           </ul>
         </section>
         {/* Lower Part */}
-        <section className="border-b px-4 py-2">
-          <ul className="max-w-[1280px] mx-auto flex flex-row justify-between items-center">
+        <section className="border-b">
+          <ul className="max-w-[1280px] mx-auto flex flex-row justify-between items-center px-4 py-2">
             <li>
               <SearchBar />
             </li>
