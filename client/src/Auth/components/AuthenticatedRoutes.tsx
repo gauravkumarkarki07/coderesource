@@ -1,8 +1,12 @@
+import Header from "@/Global/components/Header"
 import { Outlet } from "react-router-dom"
 
 function AuthenticatedRoutes() {
   return (
-    <Outlet/>
+    <section className="flex flex-col">
+      <Header/>
+      <Outlet/>
+    </section>
   )
 }
 
