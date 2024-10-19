@@ -1,5 +1,4 @@
 import SearchBar from "./SearchBar";
-import { FactoryIcon } from "lucide-react";
 import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.png";
 import twitterIcon from "../assets/twitter.png";
