@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom"
 
 function Header() {
   return (
-    <section className="px-4 py-4">
-      <nav className="flex justify-between">
+    <section className="w-full border-b">
+      <nav className="flex justify-between max-w-[1280px] mx-auto px-4 py-4">
         <ul>
           <li>CodeResource</li>
         </ul>
