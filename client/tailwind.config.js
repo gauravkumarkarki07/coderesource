@@ -12,7 +12,9 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-  		colors: {},
+  		colors: {
+        primary:'#FF4B3E',
+      },
       fontFamily:{
         Montserrat:['Montserrat','sans-serif'],
         Poppins:['Poppins','sans-serif'],
