@@ -1,5 +1,5 @@
-import FeaturedCard from "../components/FeaturedCard"
-import LatestCard from "../components/LatestCard"
+import FeaturedCard from "../components/Featured"
+import LatestCard from "../components/LatestResource"
 
 function Index() {
   return (
