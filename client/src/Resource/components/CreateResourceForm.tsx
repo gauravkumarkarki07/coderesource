@@ -2,18 +2,26 @@ import { Input } from "@/shadcn/components/ui/input"
 import { Label } from "@/shadcn/components/ui/label"
 import { Textarea } from "@/shadcn/components/ui/textarea";
 import { Button } from "@/shadcn/components/button";
-import { useForm } from "react-hook-form"
+import { Controller, useForm } from "react-hook-form"
 import TagsInput from "./TagsInput";
 import ResourceComboBox from "./ResourceComboBox";
 
 interface resourceForm{
     title:string;
     description:string;
-    tags:string;
+    tags:string[];
+    resource:string;
 }
 
 function CreateResourceForm() {
-    const{register,handleSubmit,formState:{errors}}=useForm<resourceForm>();
+    const{register,handleSubmit,formState:{errors},control}=useForm<resourceForm>({
+        defaultValues:{
+            title:'',
+            description:'',
+            tags:[],
+            resource:''
+        }
+    });
 
     // submit form
     const submitForm=(data:resourceForm)=>{
@@ -47,11 +55,30 @@ function CreateResourceForm() {
             </section>
             <section className="flex flex-col gap-2">
                 <Label>Tags</Label>
-                <TagsInput/>
+                <Controller
+                    name="tags"
+                    control={control}
+                    render={({ field: { onChange, onBlur, value } }) => (
+                        <TagsInput
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          selected={value}
+                        />
+                      )}
+                />
             </section>
             <section className="flex flex-col gap-2">
                 <Label>Resource</Label>
-                <ResourceComboBox/>
+                <Controller
+                    name="resource"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                        <ResourceComboBox
+                          onChange={onChange}
+                          selected={value}
+                        />
+                      )}
+                />
             </section>
             <Button className="w-[200px]">
                 Save Resource
