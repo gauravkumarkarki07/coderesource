@@ -1,4 +1,4 @@
-import { Input } from '@/components/ui/input';
+import { Input } from '@/shadcn/components/ui/input';
 import {SearchIcon} from 'lucide-react';
 
 function SearchBar() {

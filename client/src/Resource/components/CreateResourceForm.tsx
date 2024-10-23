@@ -1,10 +1,10 @@
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/shadcn/components/ui/button";
+import { Input } from "@/shadcn/components/ui/input"
+import { Label } from "@/shadcn/components/ui/label"
+import { Textarea } from "@/shadcn/components/ui/textarea";
+import { Button } from "@/shadcn/components/button";
 import { useForm } from "react-hook-form"
 import TagsInput from "./TagsInput";
-import { Select } from "@/components/ui/select";
+import ResourceComboBox from "./ResourceComboBox";
 
 interface resourceForm{
     title:string;
@@ -36,7 +36,7 @@ function CreateResourceForm() {
                 />
                 {errors.title && <span className="text-xs text-red-500">{errors.title.message}</span>}
             </section>
-            <section>
+            <section className="flex flex-col gap-2">
                 <Label>Description</Label>
                 <Textarea
                     placeholder="Write a short description for your resource"
@@ -45,12 +45,13 @@ function CreateResourceForm() {
                 />
                 {errors.description && <span className="text-xs text-red-500">{errors.description.message}</span>}
             </section>
-            <section>
+            <section className="flex flex-col gap-2">
                 <Label>Tags</Label>
                 <TagsInput/>
             </section>
-            <section>
+            <section className="flex flex-col gap-2">
                 <Label>Resource</Label>
+                <ResourceComboBox/>
             </section>
             <Button className="w-[200px]">
                 Save Resource

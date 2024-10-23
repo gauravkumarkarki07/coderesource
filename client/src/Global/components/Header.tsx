@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.png";
 import twitterIcon from "../assets/twitter.png";
-import { Button } from "@/shadcn/components/ui/button";
+import { Button } from "@/shadcn/components/button";
 
 function Header() {
   return (
