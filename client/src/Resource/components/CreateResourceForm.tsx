@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/shadcn/components/ui/button";
 import { useForm } from "react-hook-form"
 import TagsInput from "./TagsInput";
+import { Select } from "@/components/ui/select";
 
 interface resourceForm{
     title:string;
