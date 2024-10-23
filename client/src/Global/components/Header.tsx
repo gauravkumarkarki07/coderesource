@@ -2,6 +2,7 @@ import SearchBar from "./SearchBar";
 import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.png";
 import twitterIcon from "../assets/twitter.png";
+import { Button } from "@/shadcn/components/ui/button";
 
 function Header() {
   return (
@@ -41,6 +42,9 @@ function Header() {
               <SearchBar />
             </li>
             <section className="flex flex-row gap-4 items-center">
+              <Button variant={'outline'} className="border-primary">
+                Create Resource
+              </Button>
               <li>Home</li>
               <li>Popular</li>
               <li>More</li>
