@@ -1,10 +1,13 @@
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/shadcn/components/ui/button";
 import { useForm } from "react-hook-form"
+import TagsInput from "./TagsInput";
 
 interface resourceForm{
     title:string;
-    richText:string;
+    description:string;
     tags:string;
 }
 
@@ -34,7 +37,23 @@ function CreateResourceForm() {
             </section>
             <section>
                 <Label>Description</Label>
+                <Textarea
+                    placeholder="Write a short description for your resource"
+                    {...register('description',{required:"Description is required"})}
+                    className="h-[100px] resize-none"
+                />
+                {errors.description && <span className="text-xs text-red-500">{errors.description.message}</span>}
             </section>
+            <section>
+                <Label>Tags</Label>
+                <TagsInput/>
+            </section>
+            <section>
+                <Label>Resource</Label>
+            </section>
+            <Button className="w-[200px]">
+                Save Resource
+            </Button>
         </form>
     </section>
   )
