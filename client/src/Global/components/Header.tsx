@@ -3,6 +3,7 @@ import facebookIcon from "../assets/facebook.png";
 import instagramIcon from "../assets/instagram.png";
 import twitterIcon from "../assets/twitter.png";
 import { Button } from "@/shadcn/components/button";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -42,9 +43,11 @@ function Header() {
               <SearchBar />
             </li>
             <section className="flex flex-row gap-4 items-center">
-              <Button variant={'outline'} className="border-primary">
+                <Link to={'/create-resource'}>
+              <Button variant={'outline'} className="border-primary" type="button">
                 Create Resource
               </Button>
+                </Link>
               <li>Home</li>
               <li>Popular</li>
               <li>More</li>

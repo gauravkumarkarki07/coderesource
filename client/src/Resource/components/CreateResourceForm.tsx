@@ -58,6 +58,9 @@ function CreateResourceForm() {
                 <Controller
                     name="tags"
                     control={control}
+                    rules={{
+                        required:"Atleast one "
+                    }}
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TagsInput
                           onChange={onChange}
@@ -66,12 +69,16 @@ function CreateResourceForm() {
                         />
                       )}
                 />
+                {errors.tags && <span className="text-xs text-red-500">{errors.description?.message}</span>}
             </section>
             <section className="flex flex-col gap-2">
                 <Label>Resource</Label>
                 <Controller
                     name="resource"
                     control={control}
+                    rules={{
+                        required:true
+                    }}
                     render={({ field: { onChange, value } }) => (
                         <ResourceComboBox
                           onChange={onChange}
